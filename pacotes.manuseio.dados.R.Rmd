@@ -1,11 +1,7 @@
 ---
 title: "Usando Pacotes do R para o Manuseio de Dados"
 author: "Marcelo Ventura Freire (EACH/USP)"
-output: 
-  ioslides_presentation: 
-    fig_caption: yes
-    incremental: no
-    transition: faster
+output: ioslides_presentation
 ---
 
 ```{r setup, include=FALSE}
@@ -515,7 +511,7 @@ group_by(filter(flights, !is.na(dep_delay)), date, hour)
 ## Como Funciona o Operador `%<>%`?
 
 Realiza todas as operações e substitui o conjunto de dados original com o 
-conjunto de dados resultante
+conjunto de dados resultante final
 
 ```{r}
     dados %<>% 
