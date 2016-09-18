@@ -1,7 +1,17 @@
 ---
 title: "Usando Pacotes do R para o Manuseio de Dados"
 author: "Marcelo Ventura Freire (EACH/USP)"
-output: ioslides_presentation
+output: 
+    ioslides_presentation:
+        self_contained: true
+        smaller: true
+        smart: true
+    # html_document:
+    #     toc: true
+    #     toc_float: true
+    #     toc_depth: 2
+    #     self_contained: true
+    #     smart: true
 ---
 
 ```{r setup, include=FALSE}
@@ -18,14 +28,14 @@ knitr::opts_chunk$set(eval = FALSE)
 
 ## O que veremos
 
-- Pacotes no R
-- Pacotes do R para o Manuseio de Dados
+- [Pacotes no R](#pacotes)
+- [Pacotes do R para o Manuseio de Dados](#manuseio)
 
 
 
 
 
-# Pacotes no R
+# Pacotes no R {#pacotes}
 
 
 
@@ -158,27 +168,28 @@ botão `Install` para abrir a caixa de diálogos de instalação de pacotes.
 
 
 
-# Atividades de Manuseio de Dados
+# Atividades de Manuseio de Dados {#manuseio}
 
 
 
 ## Atividades de Manuseio de Dados
-1. *Pipe*
-2. Lendo/importando/escrevendo/exportando
-3. Visualização dos dados e da sua estrutura
-4. Manuseio das variáveis do conjunto de dados
-5. Manuseio das observações do conjunto de dados
-6. Convertendo entre os formatos longo e largo
-7. Manuseio de arquivos
-8. *Manuseio das observações e das variáveis*
-9. *Agregação os dados de um conjunto de dados*
-10. *Junção de conjuntos de dados*
+
+1. [*Pipe*](#pipe)
+1. [Lendo/importando/escrevendo/exportando](#lendo-escrevendo)
+1. [Visualização dos dados e da sua estrutura](#visualizacao)
+1. [Manuseio das variáveis do conjunto de dados](#variaveis)
+1. [Manuseio das observações do conjunto de dados](#observacoes)
+1. [Convertendo entre os formatos longo e largo](#formatos)
+1. [Manuseio de arquivos](#arquivos)
+1. [*Manuseio das observações e das variáveis*](#data-table)
+1. [*Agregação os dados de um conjunto de dados*](#agregacao)
+1. [*Junção de conjuntos de dados*](#juncao)
 
 
 
 
 
-# *Pipe*
+# *Pipe* {#pipe}
 
 
 
@@ -554,7 +565,7 @@ em que o ponto `.` indica onde entrará a saída da função anterior.
 
 
 
-# Lendo, Importando, Escrevendo
+# Lendo, Importando, Escrevendo {#lendo-escrevendo}
 
 
 
@@ -611,7 +622,7 @@ Pode salvar ***qualquer*** tipo de objeto: conjuntos de dados, funções, listas
 
 
 
-# Visualização dos Dados e da sua Estrutura
+# Visualização dos Dados e da sua Estrutura {#visualizacao}
 
 
 
@@ -629,7 +640,7 @@ Pode salvar ***qualquer*** tipo de objeto: conjuntos de dados, funções, listas
 
 
 
-# Manuseio das variáveis do conjunto de dados
+# Manuseio das variáveis do conjunto de dados {#variaveis}
 
 
 
@@ -657,7 +668,7 @@ Pode salvar ***qualquer*** tipo de objeto: conjuntos de dados, funções, listas
 
 
 
-# Manuseio das observações do conjunto de dados
+# Manuseio das observações do conjunto de dados {#observacoes}
 
 
 
@@ -676,7 +687,7 @@ Pode salvar ***qualquer*** tipo de objeto: conjuntos de dados, funções, listas
 
 
 
-# Convertendo entre os formatos longo e largo
+# Convertendo entre os formatos longo e largo {#formatos}
 
 
 
@@ -699,7 +710,7 @@ Pode salvar ***qualquer*** tipo de objeto: conjuntos de dados, funções, listas
 
 
 
-## Manuseio de arquivos
+## Manuseio de arquivos {#arquivos}
 
 1. Pacote `base`
     1. `get.wd`, `set.wd`
@@ -715,7 +726,7 @@ Pode salvar ***qualquer*** tipo de objeto: conjuntos de dados, funções, listas
 
 
 
-## *Manuseio das observações e das variáveis*
+## *Manuseio das observações e das variáveis* {#data-table}
 
 1. Pacote `data.table`
 
@@ -723,7 +734,7 @@ Pode salvar ***qualquer*** tipo de objeto: conjuntos de dados, funções, listas
 
 
 
-# *Agregação os dados de um conjunto de dados*
+# *Agregação os dados de um conjunto de dados* {#agregação}
 
 
 
@@ -740,7 +751,7 @@ Pode salvar ***qualquer*** tipo de objeto: conjuntos de dados, funções, listas
 
 
 
-# *Junção de conjuntos de dados*
+# *Junção de conjuntos de dados* {#juncao}
 
 
 
