@@ -82,6 +82,8 @@ do R no computador.
 Os outros cerca de 8700 pacotes devem ser instalados individualmente conforme o 
 interesse ou necessidade do usuário por mais funcionalidades.
 
+
+
 ## Utilização dos Pacotes 
 
 Dos cerca de 50 pacotes instalados automaticamente com o R, apenas 6 são 
@@ -95,39 +97,16 @@ utilizadas durante a execução do programa R.
 
 ## Utilizando Pacotes 
 
-_***IMPORTANTE***_:
-
 Uma vez carregado um pacote, todas as suas funcionalidades continuam disponíveis 
-para o usuário até o fim da execução do R.
+para o usuário até o fim da execução do R ou até você descarregar o pacote 
+manualmente da memória.
 
-Não precisa carregar novamente na mesma execução do R um pacote para utilizar as 
-suas funcionalidades.
-
-
-
-## Instalando Pacotes
-
-Execute o seguinte comando para instalar um pacote em R
-
-```{r}
-install.packages("nome")
-```
-
-em que `"nome"` entre aspas é o nome do pacote.
-
-Por exemplo, execute o seguinte comando para instalar o pacote `sem`, que tem 
-funcionalidades de modelagem de equações estruturais.
-
-```{r}
-install.packages("sem")
-```
-
-Você vai precisar ter conexão com a internet para executar esse comando de 
-instalação.
+Assim, não é necessário carregar um pacote novamente na mesma execução do R para 
+utilizar as suas funcionalidades se o pacote já tiver sido carregado uma vez.
 
 
 
-## Vendo os Pacotes já Instalados
+## Vendo os Pacotes Já Instalados
 
 Execute o seguinte comando para ver o nome dos pacotes já estão instalados no R
 
@@ -144,7 +123,15 @@ installed.packages()
 
 
 
-## Carregando Pacotes no R
+## Se Você Estiver Rodando o `RStudio`
+
+Basta olhar a aba `Packages` para ver quais pacotes estão instalados.
+
+![](RStudio.7.png)
+
+
+
+## Carregando e Descarregando Pacotes no R
 
 Execute o seguinte comando para carregar um pacote no R
 
@@ -152,21 +139,102 @@ Execute o seguinte comando para carregar um pacote no R
 library(nome)
 ```
 
+e execute o seguinte comando para descarregar um pacote no R
+
+```{r}
+detach("package:nome", unload = TRUE)
+```
+
 em que `nome` sem aspas é o nome do pacote já instalado.
 
-Por exemplo, execute o seguinte comando para carregar as funcionalidades de modelagem de equações estruturais.
+
+
+## Carregando e Descarregando Pacotes no R
+
+Por exemplo, execute o seguinte comando para carregar as funcionalidades de 
+modelagem de equações estruturais que foram implementadas no pacote `sem`
 
 ```{r}
 library(sem)
+```
+
+e execute o seguinte comando para descarregar as funcionalidades de modelagem 
+de equações estruturais que foram implementadas no pacote `sem`
+
+```{r}
+detach("package:sem", unload = TRUE)
 ```
 
 
 
 ## Se Você Estiver Rodando o `RStudio`
 
-Basta olhar a aba `Packages` para ver quais pacotes estão instalados e clicar no 
-botão `Install` para abrir a caixa de diálogos de instalação de pacotes.
+Basta selecionar ou desselecionar a caixa de seleção à esquerda do nome do 
+pacote na aba `Packages`.
 
+![](RStudio.7.png)
+
+
+
+## Instalando e Desinstalando Pacotes
+
+Execute o seguinte comando para instalar um pacote no R
+
+```{r}
+install.packages("nome")
+```
+
+e execute o seguinte comando para desinstalar um pacote no R
+
+```{r}
+remove.packages("nome")
+```
+
+em que `"nome"` entre aspas é o nome do pacote.
+
+**Nota 1:** Você vai precisar ter conexão com a internet para executar a 
+instalação.
+
+**Nota 2:** Alguns pacotes exigem que os seus arquivos sejam compilados no Linux 
+após serem baixados, o que pode acarretar mais demora na instalação.
+
+
+
+## Instalando e Desinstalando Pacotes
+
+***NÃO EXECUTE ESTES COMANDOS NA SUA MÁQUINA! ELES SÃO SÓ PARA ILUSTRAR!***
+
+Por exemplo, execute o seguinte comando para instalar e o pacote `sem`, que tem 
+funcionalidades de modelagem de equações estruturais
+
+```{r}
+install.packages("sem")
+```
+
+e execute o seguinte comando para desinstalar o pacote `sem`, que tem 
+funcionalidades de modelagem de equações estruturais
+
+```{r}
+remove.packages("sem")
+```
+
+
+
+## Se Você Estiver Rodando o `RStudio`
+
+Basta clicar no botão `Install` para abrir a caixa de diálogos de instalação de 
+pacotes.
+
+![](RStudio.8.png)
+
+
+
+## Se Você Estiver Rodando o `RStudio`
+
+Basta clicar no botão cinza com um xis branco à direita da linha com o nome do 
+pacote para desinstalá-lo.
+
+![](RStudio.7.png)
 
 
 
@@ -218,11 +286,11 @@ transformação que gera um terceiro conjunto de dados;
 Queremos calcular a média geométrica dos valores 1, 2, 3 e 4
 
 $$
-MG = \sqrt[n]{x_1 \cdot x_2 \dots x_n}
+G = \sqrt[n]{x_1 \cdot x_2 \dots x_n}
 $$
 
 $$
-MG = \exp\left(\frac1n\sum_{i=1}^n\log(x_i)\right)
+G = \exp\left(\frac1n\sum_{i=1}^n\log(x_i)\right)
 $$
 
 - Não é o exemplo mais realista do mundo, mas permite explicitar como funciona o 
@@ -306,11 +374,11 @@ Esses dados foram digitados previamente e salvos em um arquivo de texto com as
 informações separadas por vírgulas (CSV -- *comma separated values*).
 
 ```
-            nome    idade   peso    estatura
-            Alex    22      80      180
-            Bia     33      60      150
+            nome,idade,peso,estatura
+            Alex,22,80,180
+            Bia,33,60,150
             ...
-            Tânia   25      70      170
+            Tânia,25,70,170
 ```
 
 ## Exemplo Didático 2
@@ -321,6 +389,10 @@ Para isso, precisamos:
 2. excluir observações em que faltem peso, estatura ou ambos;
 3. calcular o IMC de cada respondente; 
 4. salvar os IMCs obtidos para analisar mais adiante.
+
+Vamos precisar usar a função `read.csv()` para importar os dados em formato 
+`CSV`, como veremos com detalhe na Seção *Lendo, Importando, Escrevendo* mais 
+adiante.
 
 
 
@@ -392,11 +464,38 @@ Para isso, precisamos:
 
 
 
+## Exemplo Didático 2
+
+### Implementação 5
+
+```{r}
+    dados <- 
+        read.csv("respostas.txt") %>% 
+        filter(!(is.na(peso))) %>%
+        filter(!(is.na(estatura))) %>%
+        mutate(imc = peso / altura ^ 2)
+```
+
+Agora sim, fica completamente explicito o *encadeamento* das operações.
+
+
+
 ## Exemplo Didático 3
 
 A partir de um conjunto de dados `flight` de voos partindo de um aeroporto, 
 queremos as médias dos atrasos de decolagem por hora para cada hora com mais de 
-10 decolagens.
+10 decolagens com atraso.
+
+Aqui, precisaremos 
+
+1) separar somente os voos que decolaram com atraso
+2) agrupar esses voos por hora
+3) contar quantos voos atrasados ocorreram por hora
+4) calcular o atraso médio para as horas que tiveram mais o que 10 decolagens 
+atrasadas.
+
+Para isso, utilizaremos as funções `filter()`, `group_by()` e `summarise()` do 
+pacote `dplyr`, as quais veremos em diversas seções mais adiante.
 
 
 
@@ -473,7 +572,7 @@ hourly_delay <-
 
 ## Como Funciona um *Pipe*?
 
-O código
+O código sem *pipes* 
 
 ```{r}
     saída.1 <- função.1(dados, opções.1)
@@ -481,7 +580,7 @@ O código
     resultado <- função.3(saída.2, opções.3)
 ```
 
-sem *pipes* vira
+vira
 
 ```{r}
     resultado <- 
@@ -491,11 +590,13 @@ sem *pipes* vira
         função.3(opções.3)
 ```
 
+com *pipes*.
 
 
 ## Como Funciona o Operador `%>%`?
 
-O resultado da expressão antes do `%>%` vira o primeiro argumento da função depois do `%>%`.
+O resultado da expressão antes do `%>%` vira o primeiro argumento da função 
+depois do `%>%`.
 
 ```{r}
 valores %>% log()
@@ -579,7 +680,7 @@ em que o ponto `.` indica onde entrará a saída da função anterior.
     1. Pacote `base`: `save` e `load`
 2. Importando
     1. Pacote `utils`
-        1. `tar`, `untar`, `zip` e `unzip`
+        1. `tar`, `zip`, `untar` e `unzip`
         1. `read.csv`, `read.csv2`, `read.delim`, `read.delim2` e `read.table`
     1. Pacote `foreign`: 
         `read.dta` (Stata), 
@@ -592,12 +693,12 @@ em que o ponto `.` indica onde entrará a saída da função anterior.
 
 ## Pacote `base`
 
-1. `save`: salva objetos para uma próxima execução do `R`
-2. `load`: carrega objetos salvos em uma execução anterior do `R`
+1. `save`: salva em disco objetos para uma próxima execução do `R`
+2. `load`: carrega na memória objetos salvos em disco numa execução anterior do `R`
 
 ```{r}
-save(obj.1, obj.2, ..., obj.n, file = "arquivo.R")
-load("arquivo.R")
+save(obj.1, obj.2, ..., obj.n, file = "arquivo.Rdata")
+load("arquivo.Rdata")
 ```
 
 Pode salvar ***qualquer*** tipo de objeto: conjuntos de dados, funções, listas
@@ -605,8 +706,45 @@ Pode salvar ***qualquer*** tipo de objeto: conjuntos de dados, funções, listas
 
 
 ## Pacote `utils`
-1. `tar`, `untar`, `zip` e `unzip`
-2. `read.csv`, `read.csv2`, `read.delim`, `read.delim2` e `read.table`
+
+1. `tar`, `zip`, `untar` e `unzip`: compactação e descompactação de arquivos
+2. `read.csv`, `read.csv2`, `read.delim`, `read.delim2` e `read.table`: importação de dados exportados como arquivos de texto 
+
+
+
+## Pacote `utils`
+
+- `tar`, `zip`, `untar` e `unzip`: compactação e descompactação de arquivos
+    - `tar` e `zip`: compactam arquivos
+    - `untar` e `unzip`: extraem ou listam arquivos contidos em um arquivo compactado
+    - `tar` e `untar`: lidar com formato `.tar`
+    - `zip` e `unzip`: lidam com formato `.zip`
+
+
+
+## Pacote `utils`
+
+```{r}
+# para compactar
+tar(tarfile = "nome.tar", files = c("nome_1.ext", "nome_2.ext", ..., "nome_n.ext"))
+zip(zipfile = "nome.zip", files = c("nome_1.ext", "nome_2.ext", ..., "nome_n.ext"))
+# para listar o conteúdo de um arquivo compactado
+untar(tarfile = "nome.tar", list = T)
+unzip(zipfile = "nome.zip", list = T)
+# para extrair arquivos de dentro de um arquivo compactado
+untar(tarfile = "nome.tar", files = c("nome_1.ext", "nome_2.ext", ..., "nome_n.ext"))
+unzip(zipfile = "nome.zip", files = c("nome_1.ext", "nome_2.ext", ..., "nome_n.ext"))
+```
+
+
+
+## Pacote `utils`
+
+- `read.csv`, `read.csv2`, `read.delim`, `read.delim2` e `read.table`: 
+
+importação de dados exportados como arquivos de texto 
+
+em formato `CSV` (*comma separated values*)
 
 
 
@@ -621,6 +759,14 @@ Pode salvar ***qualquer*** tipo de objeto: conjuntos de dados, funções, listas
 ## Pacote `readxl`
     1. `excel_sheets`
     2. `read_excel`
+
+
+
+## Hora de testar nos conjuntos de dados de vocês!
+
+Peguem os seu arquivos de dados.
+
+Vamos importá-los no R e salvá-los como arquivo `.Rdata`.
 
 
 
