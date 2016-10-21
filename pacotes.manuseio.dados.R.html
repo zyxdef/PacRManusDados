@@ -571,14 +571,19 @@ G = \exp\left(\frac1n\sum_{i=1}^n\log(x_i)\right)
 
 <ol>
 <li>Não usar <em>pipes</em> (solução para ontem) ou</li>
-<li>Adotar o seguinte uso do operador <code>%&gt;%</code></li>
+<li><em>Siviration</em>
+
+<ul>
+<li>Leia a documentação dos pacotes <code>magrittr</code> e <code>pipeR</code></li>
+<li>Procure no Stack Overflow por exemplos de código</li>
+<li><strong><em>Só quando voce não estiver com a corda no pescoço</em></strong></li>
+</ul></li>
+<li>Tentar o seguinte uso do operador <code>%&gt;%</code>, como o ponto <code>.</code> indicando onde entrará a saída da função anterior</li>
 </ol>
 
 <pre class = 'prettyprint lang-r'>    resultado &lt;- dados %&gt;%
         função.1(opções.1, .) %&gt;% 
         função.2(opções.2a, ., opções2b)</pre>
-
-<p>em que o ponto <code>.</code> indica onde entrará a saída da função anterior. 3. Para situações mais complicadas - Leia a documentação dos pacotes <code>magrittr</code> e <code>pipeR</code> - Procure no Stack Overflow por exemplos de código - <strong><em>Só quando voce não estiver com a corda no pescoço</em></strong></p>
 
 </article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Lendo, Importando, Escrevendo</h2></hgroup><article  id="lendo-escrevendo">
 

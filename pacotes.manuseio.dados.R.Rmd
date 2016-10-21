@@ -654,17 +654,17 @@ Em algumas situações, o resultado de uma função precisa ser passado como seg
 argumento da função seguinte. O que fazer?
 
 1. Não usar *pipes* (solução para ontem) ou
-2. Adotar o seguinte uso do operador `%>%`
+3. *Siviration*
+    - Leia a documentação dos pacotes `magrittr` e `pipeR`
+    - Procure no Stack Overflow por exemplos de código
+    - ***Só quando voce não estiver com a corda no pescoço***
+2. Tentar o seguinte uso do operador `%>%`, com o ponto `.` indicando onde 
+entrará a saída da função anterior
 ```{r}
     resultado <- dados %>%
         função.1(opções.1, .) %>% 
         função.2(opções.2a, ., opções2b)
 ```
-em que o ponto `.` indica onde entrará a saída da função anterior.
-3. Para situações mais complicadas 
-    - Leia a documentação dos pacotes `magrittr` e `pipeR`
-    - Procure no Stack Overflow por exemplos de código
-    - ***Só quando voce não estiver com a corda no pescoço***
 
 
 
