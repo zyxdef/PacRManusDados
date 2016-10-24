@@ -677,17 +677,18 @@ entrará a saída da função anterior
 ## Lendo, Importando, Escrevendo
 
 1. Lendo e Escrevendo
-    1. Pacote `base`: `save` e `load`
+    1. Pacote `base`: `save()` e `load()`
 2. Importando
     1. Pacote `utils`
-        1. `tar`, `zip`, `untar` e `unzip`
-        1. `read.csv`, `read.csv2`, `read.delim`, `read.delim2` e `read.table`
+        1. `tar()`, `zip()`, `untar()` e `unzip()`
+        1. `read.csv()`, `read.csv2()`, `read.delim()`, `read.delim2()`, 
+        `read.table()` e `read.fwf()`
     1. Pacote `foreign`: 
-        `read.dta` (Stata), 
-        `read.epiinfo` (EpiInfo), 
-        `read.mpt` (Minitab),
-        `read.spss` (SPSS)
-    1. Pacote `readxl`: `excel_sheets`, `read_excel` (Excel)
+        `read.dta()` (Stata), 
+        `read.epiinfo()` (EpiInfo), 
+        `read.mpt()` (Minitab),
+        `read.spss()` (SPSS)
+    1. Pacote `readxl`: `excel_sheets()`, `read_excel()` (Excel)
 
 
 
@@ -707,18 +708,22 @@ Pode salvar ***qualquer*** tipo de objeto: conjuntos de dados, funções, listas
 
 ## Pacote `utils`
 
-1. `tar`, `zip`, `untar` e `unzip`: compactação e descompactação de arquivos
-2. `read.csv`, `read.csv2`, `read.delim`, `read.delim2` e `read.table`: importação de dados exportados como arquivos de texto 
+1. `tar()`, `zip()`, `untar()` e `unzip()`: compactação e descompactação de 
+arquivos
+2. `read.csv()`, `read.csv2()`, `read.delim()`, `read.delim2()`, `read.table()` 
+e `read.fwf`: importação de dados exportados como arquivos de texto 
 
 
 
 ## Pacote `utils`
 
-- `tar`, `zip`, `untar` e `unzip`: compactação e descompactação de arquivos
-    - `tar` e `zip`: compactam arquivos
-    - `untar` e `unzip`: extraem ou listam arquivos contidos em um arquivo compactado
-    - `tar` e `untar`: lidar com formato `.tar`
-    - `zip` e `unzip`: lidam com formato `.zip`
+- `tar()`, `zip()`, `untar()` e `unzip()`: compactação e descompactação de 
+arquivos
+    - `tar()` e `zip()`: compactam arquivos
+    - `untar()` e `unzip()`: extraem ou listam arquivos contidos em um arquivo
+    compactado
+    - `tar()` e `untar()`: lidar com formato `.tar`
+    - `zip()` e `unzip()`: lidam com formato `.zip`
 
 
 
@@ -740,26 +745,104 @@ unzip(zipfile = "nome.zip", files = c("nome_1.ext", "nome_2.ext", ..., "nome_n.e
 
 ## Pacote `utils`
 
-- `read.csv`, `read.csv2`, `read.delim`, `read.delim2` e `read.table`: 
+Importação de dados exportados como arquivos de texto 
 
-importação de dados exportados como arquivos de texto 
+- `read.csv()` e `read.csv2()`: dados com colunas "separadas por virgulas" 
+(`CSV` -- *comma separated values*)
+- `read.delim()`, `read.delim2()`: dados com colunas delimitadas por tabulações
+- `read.table()`: dados com as colunas delimitadas de outras formas
+- `read.fwf()`: dados com as colunas com tamanhos fixos
 
-em formato `CSV` (*comma separated values*)
+
+
+## Pacote `utils`
+
+- `read.csv()`, `read.csv2()`, `read.delim()` e `read.delim2()`
+    - `read.csv()` e `read.delim()`: se o ponto decimal for o ponto `.`
+    - `read.csv2()` e `read.delim2()`: se o ponto decimal for a vírgula `,`
+        - nesse caso, o ponto-e-vírgula `;` passa a ser o separador de colunas
+            - o Excel no Brasil costuma exportar dessa forma
+
+
+
+## Pacote `utils`
+
+- `read.csv()`, `read.csv2()`, `read.delim()` e `read.delim2()`
+    - ***AQUI!!!***: um exemplo de cada formato
+
+
+
+## Pacote `utils`
+
+- `read.csv()`, `read.csv2()`, `read.delim()` e `read.delim2()`
+    - ***AQUI!!!***: um exemplo de uso de cada função
+    
+```{r}
+read.csv()
+read.csv2()
+read.delim() 
+read.delim2()
+```
+
+
+
+## Pacote `utils`
+
+- `read.table()`: dados com as colunas delimitadas de outras formas
+- `read.fwf()`: dados com as colunas com tamanhos fixos
+
+
+
+## Pacote `utils`
+
+- `read.table()` e `read.fwf()`
+    - ***AQUI!!!***: um exemplo de cada formato
+
+
+
+## Pacote `utils`
+
+- `read.table()` e `read.fwf()`
+    - ***AQUI!!!***: um exemplo de uso de cada função
+
+```{r}
+read.table()
+read.fwf()
+```
 
 
 
 ## Pacote `foreign`
-    1. `read.dta` (Stata)
-    2. `read.epiinfo` (EpiInfo)
-    3. `read.mpt` (Minitab)
-    4. `read.spss` (SPSS)
+
+1. `read.dta()`: para importar arquivos de dados do software `Stata`
+2. `read.epiinfo()`: para importar arquivos de dados do software `EpiInfo`
+3. `read.mpt()`: para importar arquivos de dados do software `Minitab`
+4. `read.spss()`: para importar arquivos de dados do software `SPSS`
+
+
+
+## Pacote `foreign`
+
+***AQUI!!!*** Um exemplo de uso de cada função
+
+```{r}
+read.dta()
+read.epiinfo()
+read.mpt()
+read.spss()
+```
 
 
 
 ## Pacote `readxl`
-    1. `excel_sheets`
-    2. `read_excel`
+1. `excel_sheets()`
+2. `read_excel()`
 
+
+
+## Outras opções para importar arquivos `XLS` e `XLSX`
+
+Pacote `xlsx`: ***AQUI!!!***
 
 
 ## Hora de testar nos conjuntos de dados de vocês!

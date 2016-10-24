@@ -594,7 +594,7 @@ G = \exp\left(\frac1n\sum_{i=1}^n\log(x_i)\right)
 <li>Lendo e Escrevendo
 
 <ol>
-<li>Pacote <code>base</code>: <code>save</code> e <code>load</code></li>
+<li>Pacote <code>base</code>: <code>save()</code> e <code>load()</code></li>
 </ol></li>
 <li>Importando
 
@@ -602,11 +602,11 @@ G = \exp\left(\frac1n\sum_{i=1}^n\log(x_i)\right)
 <li>Pacote <code>utils</code>
 
 <ol>
-<li><code>tar</code>, <code>zip</code>, <code>untar</code> e <code>unzip</code></li>
-<li><code>read.csv</code>, <code>read.csv2</code>, <code>read.delim</code>, <code>read.delim2</code> e <code>read.table</code></li>
+<li><code>tar()</code>, <code>zip()</code>, <code>untar()</code> e <code>unzip()</code></li>
+<li><code>read.csv()</code>, <code>read.csv2()</code>, <code>read.delim()</code>, <code>read.delim2()</code>, <code>read.table()</code> e <code>read.fwf()</code></li>
 </ol></li>
-<li>Pacote <code>foreign</code>: <code>read.dta</code> (Stata), <code>read.epiinfo</code> (EpiInfo), <code>read.mpt</code> (Minitab), <code>read.spss</code> (SPSS)</li>
-<li>Pacote <code>readxl</code>: <code>excel_sheets</code>, <code>read_excel</code> (Excel)</li>
+<li>Pacote <code>foreign</code>: <code>read.dta()</code> (Stata), <code>read.epiinfo()</code> (EpiInfo), <code>read.mpt()</code> (Minitab), <code>read.spss()</code> (SPSS)</li>
+<li>Pacote <code>readxl</code>: <code>excel_sheets()</code>, <code>read_excel()</code> (Excel)</li>
 </ol></li>
 </ol>
 
@@ -625,20 +625,20 @@ load(&quot;arquivo.Rdata&quot;)</pre>
 </article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils">
 
 <ol>
-<li><code>tar</code>, <code>zip</code>, <code>untar</code> e <code>unzip</code>: compactação e descompactação de arquivos</li>
-<li><code>read.csv</code>, <code>read.csv2</code>, <code>read.delim</code>, <code>read.delim2</code> e <code>read.table</code>: importação de dados exportados como arquivos de texto</li>
+<li><code>tar()</code>, <code>zip()</code>, <code>untar()</code> e <code>unzip()</code>: compactação e descompactação de arquivos</li>
+<li><code>read.csv()</code>, <code>read.csv2()</code>, <code>read.delim()</code>, <code>read.delim2()</code>, <code>read.table()</code> e <code>read.fwf</code>: importação de dados exportados como arquivos de texto</li>
 </ol>
 
 </article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-1">
 
 <ul>
-<li><code>tar</code>, <code>zip</code>, <code>untar</code> e <code>unzip</code>: compactação e descompactação de arquivos
+<li><code>tar()</code>, <code>zip()</code>, <code>untar()</code> e <code>unzip()</code>: compactação e descompactação de arquivos
 
 <ul>
-<li><code>tar</code> e <code>zip</code>: compactam arquivos</li>
-<li><code>untar</code> e <code>unzip</code>: extraem ou listam arquivos contidos em um arquivo compactado</li>
-<li><code>tar</code> e <code>untar</code>: lidar com formato <code>.tar</code></li>
-<li><code>zip</code> e <code>unzip</code>: lidam com formato <code>.zip</code></li>
+<li><code>tar()</code> e <code>zip()</code>: compactam arquivos</li>
+<li><code>untar()</code> e <code>unzip()</code>: extraem ou listam arquivos contidos em um arquivo compactado</li>
+<li><code>tar()</code> e <code>untar()</code>: lidar com formato <code>.tar</code></li>
+<li><code>zip()</code> e <code>unzip()</code>: lidam com formato <code>.zip</code></li>
 </ul></li>
 </ul>
 
@@ -656,25 +656,117 @@ unzip(zipfile = &quot;nome.zip&quot;, files = c(&quot;nome_1.ext&quot;, &quot;no
 
 </article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-3">
 
+<p>Importação de dados exportados como arquivos de texto</p>
+
 <ul>
-<li><code>read.csv</code>, <code>read.csv2</code>, <code>read.delim</code>, <code>read.delim2</code> e <code>read.table</code>:</li>
+<li><code>read.csv()</code> e <code>read.csv2()</code>: dados com colunas &quot;separadas por virgulas&quot; (<code>CSV</code> &#8211; <em>comma separated values</em>)</li>
+<li><code>read.delim()</code>, <code>read.delim2()</code>: dados com colunas delimitadas por tabulações</li>
+<li><code>read.table()</code>: dados com as colunas delimitadas de outras formas</li>
+<li><code>read.fwf()</code>: dados com as colunas com tamanhos fixos</li>
 </ul>
 
-<p>importação de dados exportados como arquivos de texto</p>
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-4">
 
-<p>em formato <code>CSV</code> (<em>comma separated values</em>)</p>
+<ul>
+<li><code>read.csv()</code>, <code>read.csv2()</code>, <code>read.delim()</code> e <code>read.delim2()</code>
+
+<ul>
+<li><code>read.csv()</code> e <code>read.delim()</code>: se o ponto decimal for o ponto <code>.</code></li>
+<li><code>read.csv2()</code> e <code>read.delim2()</code>: se o ponto decimal for a vírgula <code>,</code>
+
+<ul>
+<li>nesse caso, o ponto-e-vírgula <code>;</code> passa a ser o separador de colunas
+
+<ul>
+<li>o Excel no Brasil costuma exportar dessa forma</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-5">
+
+<ul>
+<li><code>read.csv()</code>, <code>read.csv2()</code>, <code>read.delim()</code> e <code>read.delim2()</code>
+
+<ul>
+<li><strong><em>AQUI!!!</em></strong>: um exemplo de cada formato</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-6">
+
+<ul>
+<li><code>read.csv()</code>, <code>read.csv2()</code>, <code>read.delim()</code> e <code>read.delim2()</code>
+
+<ul>
+<li><strong><em>AQUI!!!</em></strong>: um exemplo de uso de cada função</li>
+</ul></li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>read.csv()
+read.csv2()
+read.delim() 
+read.delim2()</pre>
+
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-7">
+
+<ul>
+<li><code>read.table()</code>: dados com as colunas delimitadas de outras formas</li>
+<li><code>read.fwf()</code>: dados com as colunas com tamanhos fixos</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-8">
+
+<ul>
+<li><code>read.table()</code> e <code>read.fwf()</code>
+
+<ul>
+<li><strong><em>AQUI!!!</em></strong>: um exemplo de cada formato</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-9">
+
+<ul>
+<li><code>read.table()</code> e <code>read.fwf()</code>
+
+<ul>
+<li><strong><em>AQUI!!!</em></strong>: um exemplo de uso de cada função</li>
+</ul></li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>read.table()
+read.fwf()</pre>
 
 </article></slide><slide class=''><hgroup><h2>Pacote <code>foreign</code></h2></hgroup><article  id="pacote-foreign">
 
-<pre >1. `read.dta` (Stata)
-2. `read.epiinfo` (EpiInfo)
-3. `read.mpt` (Minitab)
-4. `read.spss` (SPSS)</pre>
+<ol>
+<li><code>read.dta()</code>: para importar arquivos de dados do software <code>Stata</code></li>
+<li><code>read.epiinfo()</code>: para importar arquivos de dados do software <code>EpiInfo</code></li>
+<li><code>read.mpt()</code>: para importar arquivos de dados do software <code>Minitab</code></li>
+<li><code>read.spss()</code>: para importar arquivos de dados do software <code>SPSS</code></li>
+</ol>
+
+</article></slide><slide class=''><hgroup><h2>Pacote <code>foreign</code></h2></hgroup><article  id="pacote-foreign-1">
+
+<p><strong><em>AQUI!!!</em></strong> Um exemplo de uso de cada função</p>
+
+<pre class = 'prettyprint lang-r'>read.dta()
+read.epiinfo()
+read.mpt()
+read.spss()</pre>
 
 </article></slide><slide class=''><hgroup><h2>Pacote <code>readxl</code></h2></hgroup><article  id="pacote-readxl">
 
-<pre >1. `excel_sheets`
-2. `read_excel`</pre>
+<ol>
+<li><code>excel_sheets()</code></li>
+<li><code>read_excel()</code></li>
+</ol>
+
+</article></slide><slide class=''><hgroup><h2>Outras opções para importar arquivos <code>XLS</code> e <code>XLSX</code></h2></hgroup><article  id="outras-opcoes-para-importar-arquivos-xls-e-xlsx">
+
+<p>Pacote <code>xlsx</code>: <strong><em>AQUI!!!</em></strong></p>
 
 </article></slide><slide class=''><hgroup><h2>Hora de testar nos conjuntos de dados de vocês!</h2></hgroup><article  id="hora-de-testar-nos-conjuntos-de-dados-de-voces">
 
