@@ -768,21 +768,47 @@ Importação de dados exportados como arquivos de texto
 ## Pacote `utils`
 
 - `read.csv()`, `read.csv2()`, `read.delim()` e `read.delim2()`
-    - ***AQUI!!!***: um exemplo de cada formato
+
+Um exemplo de cada formato
+
+        read.csv()      read.csv2()     read.delim()        read.delim2()   
+        Nome,Idd,Nota   Nome;Idd;Nota   Nome    Idd Nota    Nome    Idd Nota
+        Ana,21,10.0     Ana;21;10,0     Ana     21  10.0    Ana     21  10,0
+        Bia,25,8.3      Bia;25;8,3      Bia     25  8.3     Bia     25  8,3 
+        Caio,23,5.2     Caio;23;5,2     Caio    23  5.2     Caio    23  5,2 
 
 
 
 ## Pacote `utils`
 
 - `read.csv()`, `read.csv2()`, `read.delim()` e `read.delim2()`
-    - ***AQUI!!!***: um exemplo de uso de cada função
-    
+
+Dados textuais podem vir delimitadas ou não por aspas.
+
+As quatro funções sabem lidar automaticamente com essa possibilidade.
+
+Assim, por exemplo, `read.csv2()` retornará o mesmo *data frame* se ler 
+qualquer um dos dois conjuntos de dados abaixo.
+
+        Nome;Idd;Nota       Nome;Idd;Nota
+        Ana;21;10,0         "Ana";21;10,0
+        Bia;25;8,3          "Bia";25;8,3
+        Caio;23;5,2         "Caio";23;5,2
+
+
+
+## Pacote `utils`
+
+- `read.csv()`, `read.csv2()`, `read.delim()` e `read.delim2()`
+
 ```{r}
-read.csv()
-read.csv2()
-read.delim() 
-read.delim2()
+read.csv("nome.csv")
+read.csv2("nome.csv")
+read.delim("nome.txt") 
+read.delim2("nome.txt")
 ```
+
+em que `nome` é o nome do seu arquivo.
 
 
 
@@ -791,19 +817,83 @@ read.delim2()
 - `read.table()`: dados com as colunas delimitadas de outras formas
 - `read.fwf()`: dados com as colunas com tamanhos fixos
 
+        read.table()                read.fwf() 
+        
+        Ana 21 10.0                 Ana 2110.0 
+        Bia 25 8.3                  Bia 25 8.3 
+        Caio 23 5.2                 Caio23 5.2 
+
+
+
+## Pacote `utils`
+
+`read.table()` é o canivete suíço para leitura de dados delimitados
+
+Seus parâmetros são:
+
+```{r}
+read.table(
+    file, header = FALSE, sep = "", quote = "\"'", dec = ".", 
+    numerals = c("allow.loss", "warn.loss", "no.loss"),
+    row.names, col.names, as.is = !stringsAsFactors, na.strings = "NA", 
+    colClasses = NA, nrows = -1, skip = 0, check.names = TRUE, 
+    fill = !blank.lines.skip, strip.white = FALSE, blank.lines.skip = TRUE,
+    comment.char = "#", allowEscapes = FALSE, flush = FALSE,
+    stringsAsFactors = default.stringsAsFactors(),
+    fileEncoding = "", encoding = "unknown", skipNul = FALSE
+)
+```
+
+
+
+## Pacote `utils`
+
+Alguns parâmetros opcionais mais usados de `read.table()`:
+
+- `header` indica se a primeira linha será ou não o nome das colunas
+- `sep = ""` indica qual caracter será o separador de colunas; se for uma 
+string vazia (valor padrão), então espaço, tabulação ou salto de linha serão 
+delimitadores
+- `dec` indica qual caracter deve ser interpretado como ponto decimal
+- `as.is` indica se colunas não numéricas devem ser armazenadas como dado 
+textual (`as.is = TRUE`) ou se devem ser transformados em variável categórica 
+com a função `factor()` (`as.is = FALSE`)
+- `na.strings` indica o vetor de *strings* que representam `NA` nos dados
+- `nrows = -1` indica quantas linhas deverão ser lidas no máximo
+- `skip` indica quantas linhas devem ser ignoradas antes de começar a ler
+
+
+
+## Pacote `utils`
+
+Alguns parâmetros opcionais mais usados de `read.table()`:
+
+- `fill` indica se deve preencher com `NA` caso faltem colunas em alguma linha
+- `strip.white` indica se deve eliminar espaços em branco no início e no fim de 
+valores textuais
+- `blank.lines.skip` indica se deve ignorar linhas em branco ou se deve incluir 
+uma linha inteira de `NA`s no *data frame*
+- `encoding` indica qual a codificação usada para gerar o arquivo; os valores 
+mais usuais são: 
+    - `"UTF-8"` e `"ISO-8859-1"` (`"LATIN1"`) na web e no Linux; 
+    - `"UTF-16LE"` no Windows; e
+    - `"MAC"` no OS X
+
+
+
+## Pacote `utils`
+
+- `read.fwf()` é o canivete suíço para leitura de dados de tamanho fixo
+
+***AQUI!!!***: um exemplo de cada formato
+
 
 
 ## Pacote `utils`
 
 - `read.table()` e `read.fwf()`
-    - ***AQUI!!!***: um exemplo de cada formato
 
-
-
-## Pacote `utils`
-
-- `read.table()` e `read.fwf()`
-    - ***AQUI!!!***: um exemplo de uso de cada função
+***AQUI!!!***: um exemplo de uso de cada função
 
 ```{r}
 read.table()

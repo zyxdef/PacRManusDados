@@ -687,54 +687,123 @@ unzip(zipfile = &quot;nome.zip&quot;, files = c(&quot;nome_1.ext&quot;, &quot;no
 </article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-5">
 
 <ul>
-<li><code>read.csv()</code>, <code>read.csv2()</code>, <code>read.delim()</code> e <code>read.delim2()</code>
-
-<ul>
-<li><strong><em>AQUI!!!</em></strong>: um exemplo de cada formato</li>
-</ul></li>
+<li><code>read.csv()</code>, <code>read.csv2()</code>, <code>read.delim()</code> e <code>read.delim2()</code></li>
 </ul>
+
+<p>Um exemplo de cada formato</p>
+
+<pre >    read.csv()      read.csv2()     read.delim()        read.delim2()   
+    Nome,Idd,Nota   Nome;Idd;Nota   Nome    Idd Nota    Nome    Idd Nota
+    Ana,21,10.0     Ana;21;10,0     Ana     21  10.0    Ana     21  10,0
+    Bia,25,8.3      Bia;25;8,3      Bia     25  8.3     Bia     25  8,3 
+    Caio,23,5.2     Caio;23;5,2     Caio    23  5.2     Caio    23  5,2 </pre>
 
 </article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-6">
 
 <ul>
-<li><code>read.csv()</code>, <code>read.csv2()</code>, <code>read.delim()</code> e <code>read.delim2()</code>
-
-<ul>
-<li><strong><em>AQUI!!!</em></strong>: um exemplo de uso de cada função</li>
-</ul></li>
+<li><code>read.csv()</code>, <code>read.csv2()</code>, <code>read.delim()</code> e <code>read.delim2()</code></li>
 </ul>
 
-<pre class = 'prettyprint lang-r'>read.csv()
-read.csv2()
-read.delim() 
-read.delim2()</pre>
+<p>Dados textuais podem vir delimitadas ou não por aspas.</p>
+
+<p>As quatro funções sabem lidar automaticamente com essa possibilidade.</p>
+
+<p>Assim, por exemplo, <code>read.csv2()</code> retornará o mesmo <em>data frame</em> se ler qualquer um dos dois conjuntos de dados abaixo.</p>
+
+<pre >    Nome;Idd;Nota       Nome;Idd;Nota
+    Ana;21;10,0         &quot;Ana&quot;;21;10,0
+    Bia;25;8,3          &quot;Bia&quot;;25;8,3
+    Caio;23;5,2         &quot;Caio&quot;;23;5,2</pre>
 
 </article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-7">
 
 <ul>
-<li><code>read.table()</code>: dados com as colunas delimitadas de outras formas</li>
-<li><code>read.fwf()</code>: dados com as colunas com tamanhos fixos</li>
+<li><code>read.csv()</code>, <code>read.csv2()</code>, <code>read.delim()</code> e <code>read.delim2()</code></li>
 </ul>
+
+<pre class = 'prettyprint lang-r'>read.csv(&quot;nome.csv&quot;)
+read.csv2(&quot;nome.csv&quot;)
+read.delim(&quot;nome.txt&quot;) 
+read.delim2(&quot;nome.txt&quot;)</pre>
+
+<p>em que <code>nome</code> é o nome do seu arquivo.</p>
 
 </article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-8">
 
 <ul>
-<li><code>read.table()</code> e <code>read.fwf()</code>
+<li><code>read.table()</code>: dados com as colunas delimitadas de outras formas</li>
+<li><p><code>read.fwf()</code>: dados com as colunas com tamanhos fixos</p>
 
-<ul>
-<li><strong><em>AQUI!!!</em></strong>: um exemplo de cada formato</li>
-</ul></li>
+<pre >read.table()                read.fwf() 
+
+Ana 21 10.0                 Ana 2110.0 
+Bia 25 8.3                  Bia 25 8.3 
+Caio 23 5.2                 Caio23 5.2 </pre></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-9">
 
-<ul>
-<li><code>read.table()</code> e <code>read.fwf()</code>
+<p><code>read.table()</code> é o canivete suíço para leitura de dados delimitados</p>
+
+<p>Seus parâmetros são:</p>
+
+<pre class = 'prettyprint lang-r'>read.table(
+    file, header = FALSE, sep = &quot;&quot;, quote = &quot;\&quot;&#39;&quot;, dec = &quot;.&quot;, 
+    numerals = c(&quot;allow.loss&quot;, &quot;warn.loss&quot;, &quot;no.loss&quot;),
+    row.names, col.names, as.is = !stringsAsFactors, na.strings = &quot;NA&quot;, 
+    colClasses = NA, nrows = -1, skip = 0, check.names = TRUE, 
+    fill = !blank.lines.skip, strip.white = FALSE, blank.lines.skip = TRUE,
+    comment.char = &quot;#&quot;, allowEscapes = FALSE, flush = FALSE,
+    stringsAsFactors = default.stringsAsFactors(),
+    fileEncoding = &quot;&quot;, encoding = &quot;unknown&quot;, skipNul = FALSE
+)</pre>
+
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-10">
+
+<p>Alguns parâmetros opcionais mais usados de <code>read.table()</code>:</p>
 
 <ul>
-<li><strong><em>AQUI!!!</em></strong>: um exemplo de uso de cada função</li>
+<li><code>header</code> indica se a primeira linha será ou não o nome das colunas</li>
+<li><code>sep = &quot;&quot;</code> indica qual caracter será o separador de colunas; se for uma string vazia (valor padrão), então espaço, tabulação ou salto de linha serão delimitadores</li>
+<li><code>dec</code> indica qual caracter deve ser interpretado como ponto decimal</li>
+<li><code>as.is</code> indica se colunas não numéricas devem ser armazenadas como dado textual (<code>as.is = TRUE</code>) ou se devem ser transformados em variável categórica com a função <code>factor()</code> (<code>as.is = FALSE</code>)</li>
+<li><code>na.strings</code> indica o vetor de <em>strings</em> que representam <code>NA</code> nos dados</li>
+<li><code>nrows = -1</code> indica quantas linhas deverão ser lidas no máximo</li>
+<li><code>skip</code> indica quantas linhas devem ser ignoradas antes de começar a ler</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-11">
+
+<p>Alguns parâmetros opcionais mais usados de <code>read.table()</code>:</p>
+
+<ul>
+<li><code>fill</code> indica se deve preencher com <code>NA</code> caso faltem colunas em alguma linha</li>
+<li><code>strip.white</code> indica se deve eliminar espaços em branco no início e no fim de valores textuais</li>
+<li><code>blank.lines.skip</code> indica se deve ignorar linhas em branco ou se deve incluir uma linha inteira de <code>NA</code>s no <em>data frame</em></li>
+<li><code>encoding</code> indica qual a codificação usada para gerar o arquivo; os valores mais usuais são:
+
+<ul>
+<li><code>&quot;UTF-8&quot;</code> e <code>&quot;ISO-8859-1&quot;</code> (<code>&quot;LATIN1&quot;</code>) na web e no Linux;</li>
+<li><code>&quot;UTF-16LE&quot;</code> no Windows; e</li>
+<li><code>&quot;MAC&quot;</code> no OS X</li>
 </ul></li>
 </ul>
+
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-12">
+
+<ul>
+<li><code>read.fwf()</code> é o canivete suíço para leitura de dados de tamanho fixo</li>
+</ul>
+
+<p><strong><em>AQUI!!!</em></strong>: um exemplo de cada formato</p>
+
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-13">
+
+<ul>
+<li><code>read.table()</code> e <code>read.fwf()</code></li>
+</ul>
+
+<p><strong><em>AQUI!!!</em></strong>: um exemplo de uso de cada função</p>
 
 <pre class = 'prettyprint lang-r'>read.table()
 read.fwf()</pre>
