@@ -919,6 +919,7 @@ Sobre essas funções, consulte o *help* do `R` (*i.e.*, te vira, negão!)
 
 
 ## Pacote `readxl`
+
 1. `excel_sheets()`
 2. `read_excel()`
 
@@ -946,12 +947,42 @@ Vamos importá-los no R e salvá-los como arquivo `.Rdata`.
 ## Visualização dos Dados e da sua Estrutura
 
 1. Pacote `base`
-    1. `summary`, `table`, 
-    2. `unique`
+    1. `summary()`, `table()`, 
+    2. `unique()`
 1. Pacote `utils`
-    1. `str`
-    2. `fix`
-    3. `head` e `tail`
+    1. `str()`
+    2. `fix()`
+    3. `head()` e `tail()`
+
+
+
+## Pacote `base`
+
+1. `summary()`, `table()`, 
+
+
+
+## Pacote `base`
+
+1. `unique()`
+
+
+
+## Pacote `utils`
+
+1. `str()`
+
+
+
+## Pacote `utils`
+
+1. `fix()`
+
+
+
+## Pacote `utils`
+
+1. `head()` e `tail()`
 
 
 
@@ -964,22 +995,63 @@ Vamos importá-los no R e salvá-los como arquivo `.Rdata`.
 ## Manuseio das variáveis do conjunto de dados
 
 1. Pacote `base`
-    `is.*` (funções de verificação de tipos)
-    `as.*` (funções de conversão de tipos), 
-    `cut`
-    `ifelse`
-    `gsub`
-    `iconv`
-    `paste` e `paste0`
+    - `is.*()`; `as.*()`; `cut()`; `ifelse()`; `gsub()`; 
+    `iconv()`; `paste()` e `paste0()`
 1. Pacote `dplyr`
-    `select` e `rename`
-    `mutate` e `transmute`
+    - `select()` e `rename()`; `mutate()` e `transmute()`
 1. Pacote `tidyr`
-    `separate`
-    `unite`
+    - `separate()`; `unite()`
 1. Pacote `car`
-    `recode`
-1. Pacote `lubridate` (processamento de strings de data e hora)
+    - `recode()`
+1. Pacote `lubridate` (processamento de *strings* de data e hora)
+
+
+
+## Pacote `base`
+
+1. `is.*()` (funções de verificação de tipos)
+1. `as.*()` (funções de conversão de tipos)
+1. `cut()`
+1. `ifelse()`
+1. `gsub()`
+1. `iconv()`
+1. `paste()` e `paste0()`
+
+
+
+## Pacote `dplyr`
+
+1. `select()` e `rename()`
+
+
+
+## Pacote `dplyr`
+
+1. `mutate()` e `transmute()`
+
+
+
+## Pacote `tidyr`
+
+1. `separate()`
+
+
+
+## Pacote `tidyr`
+
+1. `unite()`
+
+
+
+## Pacote `car`
+
+1. `recode()`
+
+
+
+## Pacote `lubridate` 
+
+(processamento de *strings* de data e hora)
 
 
 
@@ -992,13 +1064,41 @@ Vamos importá-los no R e salvá-los como arquivo `.Rdata`.
 ## Manuseio das observações do conjunto de dados
 
 1. Pacote `base`
-    1. `grep*`
-    2. `regex*`
-    3. `is.na`, `is.nan`, `is.null`, `is.infinite`
-    4. `any`, `all`
+    1. `grep()` e `grepl()`
+    2. `regexpr()` e `gregexpr()`
+    3. `is.na()`, `is.nan()`, `is.null()`, `is.infinite()`
 1. Pacote `dplyr` 
-    1. `filter`
-    2. `arrange`
+    1. `filter()`
+    2. `arrange()`
+
+
+
+## Pacote `base`
+1. `grep()` e `grepl()`
+
+
+
+## Pacote `base`
+
+1. `regexpr()` e `gregexpr()`
+
+
+
+## Pacote `base`
+
+1. `is.na()`, `is.nan()`, `is.null()`, `is.infinite()`
+
+
+
+## Pacote `dplyr`
+
+1. `filter()`
+
+
+
+## Pacote `dplyr`
+
+1. `arrange()`
 
 
 
@@ -1011,13 +1111,42 @@ Vamos importá-los no R e salvá-los como arquivo `.Rdata`.
 ## Convertendo entre os formatos longo e largo
 
 1. Pacote `reshape2`
-    1. `melt`
-    2. `cast`
-    3. `acast` e `dcast`
-    4. `recast`
+    1. `melt()`
+    3. `acast()` e `dcast()`
+    4. `recast()`
 1. Pacote `tidyr`
-    1. `gather`
-    2. `spread`
+    1. `gather()`
+    2. `spread()`
+
+
+
+## Pacote `reshape2`
+
+1. `melt()`
+
+
+
+## Pacote `reshape2`
+
+1. `acast()` e `dcast()`
+
+
+
+## Pacote `reshape2`
+
+1. `recast()`
+
+
+
+## Pacote `tidyr`
+
+1. `gather()`
+
+
+
+## Pacote `tidyr`
+
+1. `spread()`
 
 
 
@@ -1030,10 +1159,48 @@ Vamos importá-los no R e salvá-los como arquivo `.Rdata`.
 ## Manuseio de arquivos {#arquivos}
 
 1. Pacote `base`
-    1. `get.wd`, `set.wd`
-    2. `dir`, `dir.create`, `dirnames`
-    3. `list.*`
-    4. `file.*`
+    1. `get.wd()` e `set.wd()`
+    1. `list.files()`, `dir()` e `list.dirs()`
+    1. `dir.exists()`, `dir.create()` e `tempdir()`
+    1. `file.exists()`, `file.create()`, `file.append()` e `tempfile()`
+    1. `file.copy()` e `file.rename()`
+    1. `file.remove()` e `unlink()`
+
+
+
+## Pacote `base`
+
+1. `get.wd()` e `set.wd()`
+
+
+
+## Pacote `base`
+
+1. `list.files()`, `dir()` e `list.dirs()`
+
+
+
+## Pacote `base`
+
+1. `dir.exists()`, `dir.create()` e `tempdir()`
+
+
+
+## Pacote `base`
+
+1. `file.exists()`, `file.create()`, `file.append()` e `tempfile()`
+
+
+
+## Pacote `base`
+
+1. `file.copy()` e `file.rename()`
+
+
+
+## Pacote `base`
+
+1. `file.remove()` e `unlink()`
 
 
 
@@ -1047,7 +1214,10 @@ Vamos importá-los no R e salvá-los como arquivo `.Rdata`.
 
 1. Pacote `data.table`
 
+Existe, é bem interessante, tem no *help*, só que não dá tempo de falar sobre 
+ele neste curso.
 
+***SUGESTÃO:*** Procure, estude e faça um *test drive*.
 
 
 
@@ -1058,11 +1228,12 @@ Vamos importá-los no R e salvá-los como arquivo `.Rdata`.
 ## *Agregação os dados de um conjunto de dados*
 
 1. Pacote `base`
-    1. `by`
-    2. `apply`, `*apply`
+    1. `by()`
+    1. `apply()`
+    1. `lapply()`, `sapply()`, `vapply()`, `mapply()` e `tapply()`
 1. Pacote `dplyr`
-    1. `group_by`
-    2. `summarise`
+    1. `group_by()` e `ungroup()`
+    1. `summarise()`
 
 
 
@@ -1075,9 +1246,17 @@ Vamos importá-los no R e salvá-los como arquivo `.Rdata`.
 ## *Junção de conjuntos de dados*
 
 1. Pacote `base`
-    1. `cbind`, `rbind`
-    2. `merge`
+    1. `cbind()`, `rbind()`
+    2. `merge()`
 1. Pacote `reshape`
-    1. `merge_all`
+    1. `merge_all()`
 1. Pacote `dplyr`
-    1. `*_join`
+    1. `inner_join()`
+    1. `left_join()`
+    1. `right_join()`
+    1. `full_join()`
+    1. `semi_join()`
+    1. `anti_join()`
+
+
+
