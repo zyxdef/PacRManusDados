@@ -792,21 +792,45 @@ Caio 23 5.2                 Caio23 5.2 </pre></li>
 </article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-12">
 
 <ul>
-<li><code>read.fwf()</code> é o canivete suíço para leitura de dados de tamanho fixo</li>
+<li><code>read.fwf()</code> é a função para leitura de dados de tamanho fixo</li>
 </ul>
 
-<p><strong><em>AQUI!!!</em></strong>: um exemplo de cada formato</p>
+<p>Para ler as três coluna de</p>
+
+<pre >    Ana 2110.0 
+    Bia 25 8.3 
+    Caio23 5.2 </pre>
+
+<p>precisaríamos executar o seguinte</p>
+
+<pre class = 'prettyprint lang-r'>read.fwf(&quot;nome.txt&quot;, widths = c(4, 2, 4))</pre>
+
+<pre >##     V1 V2   V3
+## 1 Ana  21 10.0
+## 2 Bia  25  8.3
+## 3 Caio 23  5.2</pre>
 
 </article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-13">
 
 <ul>
-<li><code>read.table()</code> e <code>read.fwf()</code></li>
+<li><code>read.fwf()</code></li>
 </ul>
 
-<p><strong><em>AQUI!!!</em></strong>: um exemplo de uso de cada função</p>
+<p>Mas também poderíamos ter executado</p>
 
-<pre class = 'prettyprint lang-r'>read.table()
-read.fwf()</pre>
+<pre class = 'prettyprint lang-r'>read.fwf(&quot;nome.txt&quot;, widths = c(4, -2, 4))</pre>
+
+<pre >##     V1   V2
+## 1 Ana  10.0
+## 2 Bia   8.3
+## 3 Caio  5.2</pre>
+
+<pre class = 'prettyprint lang-r'>read.fwf(&quot;nome.txt&quot;, widths = c(4, 2, -4))</pre>
+
+<pre >##     V1 V2
+## 1 Ana  21
+## 2 Bia  25
+## 3 Caio 23</pre>
 
 </article></slide><slide class=''><hgroup><h2>Pacote <code>foreign</code></h2></hgroup><article  id="pacote-foreign">
 
@@ -817,14 +841,7 @@ read.fwf()</pre>
 <li><code>read.spss()</code>: para importar arquivos de dados do software <code>SPSS</code></li>
 </ol>
 
-</article></slide><slide class=''><hgroup><h2>Pacote <code>foreign</code></h2></hgroup><article  id="pacote-foreign-1">
-
-<p><strong><em>AQUI!!!</em></strong> Um exemplo de uso de cada função</p>
-
-<pre class = 'prettyprint lang-r'>read.dta()
-read.epiinfo()
-read.mpt()
-read.spss()</pre>
+<p>Sobre essas funções, consulte o <em>help</em> do <code>R</code> (<em>i.e.</em>, te vira, negão!)</p>
 
 </article></slide><slide class=''><hgroup><h2>Pacote <code>readxl</code></h2></hgroup><article  id="pacote-readxl">
 

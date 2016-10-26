@@ -883,21 +883,36 @@ mais usuais são:
 
 ## Pacote `utils`
 
-- `read.fwf()` é o canivete suíço para leitura de dados de tamanho fixo
+- `read.fwf()` é a função para leitura de dados de tamanho fixo
 
-***AQUI!!!***: um exemplo de cada formato
+Para ler as três coluna de 
+
+        Ana 2110.0 
+        Bia 25 8.3 
+        Caio23 5.2 
+
+```{r, eval=T, echo=F}
+cat(file = "nome.txt", "Ana 2110.0\nBia 25 8.3\nCaio23 5.2\n")
+```
+
+precisaríamos executar o seguinte
+```{r, eval = T}
+read.fwf("nome.txt", widths = c(4, 2, 4))
+```
 
 
 
 ## Pacote `utils`
 
-- `read.table()` e `read.fwf()`
+- `read.fwf()` 
 
-***AQUI!!!***: um exemplo de uso de cada função
-
-```{r}
-read.table()
-read.fwf()
+Mas também poderíamos ter executado 
+```{r, eval = T}
+read.fwf("nome.txt", widths = c(4, -2, 4))
+read.fwf("nome.txt", widths = c(4, 2, -4))
+```
+```{r, eval=T, echo=F}
+unlink("nome.txt")
 ```
 
 
@@ -909,18 +924,7 @@ read.fwf()
 3. `read.mpt()`: para importar arquivos de dados do software `Minitab`
 4. `read.spss()`: para importar arquivos de dados do software `SPSS`
 
-
-
-## Pacote `foreign`
-
-***AQUI!!!*** Um exemplo de uso de cada função
-
-```{r}
-read.dta()
-read.epiinfo()
-read.mpt()
-read.spss()
-```
+Sobre essas funções, consulte o *help* do `R` (*i.e.*, te vira, negão!)
 
 
 
