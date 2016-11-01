@@ -381,7 +381,7 @@ Para isso, precisamos:
 4. salvar os IMCs obtidos para analisar mais adiante.
 
 Vamos precisar usar a função `read.csv()` para importar os dados em formato 
-`CSV`, como veremos com detalhe na Seção *Lendo, Importando, Escrevendo* mais 
+`CSV`, como veremos na Seção *Lendo/importando/escrevendo/exportando* mais 
 adiante.
 
 
@@ -394,7 +394,7 @@ adiante.
     dados <- read.csv("respostas.txt")
     faltante.peso <- is.na(dados$peso)
     faltante.estatura <- is.na(dados$estatura)
-    faltante <- missing.peso | missing.estatura
+    faltante <- faltante.peso | faltante.estatura
     dados <- dados[!faltante, ]
     imc <- dados$peso / dados$altura ^ 2
 ```

@@ -367,7 +367,7 @@ G = \exp\left(\frac1n\sum_{i=1}^n\log(x_i)\right)
 <li>salvar os IMCs obtidos para analisar mais adiante.</li>
 </ol>
 
-<p>Vamos precisar usar a função <code>read.csv()</code> para importar os dados em formato <code>CSV</code>, como veremos com detalhe na Seção <em>Lendo, Importando, Escrevendo</em> mais adiante.</p>
+<p>Vamos precisar usar a função <code>read.csv()</code> para importar os dados em formato <code>CSV</code>, como veremos na Seção <em>Lendo/importando/escrevendo/exportando</em> mais adiante.</p>
 
 </article></slide><slide class=''><hgroup><h2>Exemplo Didático 2</h2></hgroup><article  id="exemplo-didatico-2-2">
 
@@ -376,7 +376,7 @@ G = \exp\left(\frac1n\sum_{i=1}^n\log(x_i)\right)
 <pre class = 'prettyprint lang-r'>    dados &lt;- read.csv(&quot;respostas.txt&quot;)
     faltante.peso &lt;- is.na(dados$peso)
     faltante.estatura &lt;- is.na(dados$estatura)
-    faltante &lt;- missing.peso | missing.estatura
+    faltante &lt;- faltante.peso | faltante.estatura
     dados &lt;- dados[!faltante, ]
     imc &lt;- dados$peso / dados$altura ^ 2</pre>
 
