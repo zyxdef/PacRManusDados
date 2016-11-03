@@ -35,7 +35,7 @@ knitr::opts_chunk$set(eval = FALSE)
 
 ## O R e os seus Pacotes
 
-O software estatístico livre, gratuito e *open source* `R` possuia em 04/07/2016 
+O software estatístico livre, gratuito e *open source* `R` possui em 04/07/2016 
 mais de 8700 **pacotes** ou bibliotecas (*packages*) de funções e rotinas 
 disponíveis em código fonte e código executável no repositório público de 
 pacotes do site *Comprehensive R Archive Network* (CRAN).
@@ -46,7 +46,7 @@ Cada pacote é uma contribuição voluntária de pesquisadores e desenvolvedores
 planeta inteiro e implementa algum conjunto específico de funcionalidade.
 
 _***IMPORTANTE***_: Antes de tentar implementar na unha algum método, verifique 
-se já não existe um pacote que execute o método de que voce precisa.
+se já não existe um pacote que execute o método de que você precisa.
 
 
 
@@ -841,10 +841,10 @@ read.table(
 Alguns parâmetros opcionais mais usados de `read.table()`:
 
 - `header` indica se a primeira linha será ou não o nome das colunas
-- `sep = ""` indica qual caracter será o separador de colunas; se for uma 
+- `sep = ""` indica qual caractere será o separador de colunas; se for uma 
 string vazia (valor padrão), então espaço, tabulação ou salto de linha serão 
 delimitadores
-- `dec` indica qual caracter deve ser interpretado como ponto decimal
+- `dec` indica qual caractere deve ser interpretado como ponto decimal
 - `as.is` indica se colunas não numéricas devem ser armazenadas como dado 
 textual (`as.is = TRUE`) ou se devem ser transformados em variável categórica 
 com a função `factor()` (`as.is = FALSE`)
