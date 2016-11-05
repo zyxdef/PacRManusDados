@@ -10,6 +10,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(eval = FALSE)
+library(readxl)
 ```
 
 
@@ -924,8 +925,78 @@ Sobre essas funções, consulte o *help* do `R` (*i.e.*, te vira, negão!)
 
 ## Pacote `readxl`
 
-1. `excel_sheets()`
-2. `read_excel()`
+1.
+`excel_sheets()` -- nomes das planilhas dentro do `XLS` ou `XLS 2. `read_excel()` -- lê uma planiha específica do `XLS` ou `XLSX`
+
+
+
+## Pacote `readxl`
+
+- `excel_sheets()` retorna um vetor textual com os nomes das planihas presentes 
+no arquivo `XLS` ou `XLSX`
+
+```{r, eval=FALSE}
+excel_sheets("nome.xls")
+excel_sheets("nome.xlsx")
+```
+
+
+
+## Pacote `readxl`
+
+- `read_excel()` retorna um *data frame* com os dados presentes em uma das 
+planilhas do arquivo `XLS` ou `XLSX`
+
+```{r, eval=FALSE}
+read_excel(path, sheet = 1, col_names = TRUE, col_types = NULL, na = "",
+  skip = 0)
+```
+
+
+
+## Pacote `readxl`
+
+Parâmetros:
+
+- `path` -- nome do arquivo `XLS` ou `XLSX` (com caminho, se necessário)
+- `sheet` -- planilha a ser lida
+    - pode ser ou o nome da planiha (texto) ou a sua posição (número)
+- `col_names` -- a primeira linha terá os nomes das variáveis?
+- `skip` -- indica quantas linhas pular antes de começar a ler
+    - útil quando houver linhas em branco antes dos dados
+- `col_types` -- vetor de texto com os tipos de cada coluna
+- `na` -- *string* que sinaliza um dado faltante (*missing*)
+
+
+
+## Pacote `readxl`
+
+![](metadados.small.png)
+
+
+
+## Pacote `readxl`
+
+![](dados.small.png)
+
+
+
+## Pacote `readxl`
+
+```{r 1a}
+excel_sheets("dividas.xlsx")
+read_excel("dividas.xlsx", sheet = 1, col_types = NULL, skip = 2)
+read_excel("dividas.xlsx", sheet = 2, col_types = NULL, skip = 2)
+```
+
+
+
+## Pacote `readxl`
+
+```{r 1a, eval=TRUE}
+```
+
+* **AQUI!!!** *
 
 
 
