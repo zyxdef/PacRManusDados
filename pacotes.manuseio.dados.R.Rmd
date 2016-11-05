@@ -901,6 +901,10 @@ Mas também poderíamos ter executado
 read.fwf("nome.txt", widths = c(4, -2, 4))
 read.fwf("nome.txt", widths = c(4, 2, -4))
 ```
+
+Note o uso de inteiros negativos para indicar a largura das colunas a serem 
+**ignoradas** por `read.fwf()`.
+
 ```{r, eval=T, echo=F}
 unlink("nome.txt")
 ```
