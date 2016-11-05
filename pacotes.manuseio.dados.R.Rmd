@@ -1,5 +1,5 @@
 ---
-title: "Usando Pacotes do R para o Manuseio de Dados"
+title: "Usando Pacotes do `R` para o Manuseio de Dados"
 author: "Marcelo Ventura Freire (EACH/USP)"
 output: 
     ioslides_presentation:
@@ -16,24 +16,24 @@ knitr::opts_chunk$set(eval = FALSE)
 
 
 
-# Usando Pacotes do R para o Manuseio de Dados
+# Usando Pacotes do `R` para o Manuseio de Dados
 
 
 
 ## O que veremos
 
-- [Pacotes no R](#pacotes)
-- [Pacotes do R para o Manuseio de Dados](#manuseio)
+- [Pacotes no `R`](#5)
+- [Pacotes do `R` para o Manuseio de Dados](#20)
 
 
 
 
 
-# Pacotes no R {#pacotes}
+# Pacotes no `R`
 
 
 
-## O R e os seus Pacotes
+## O `R` e os seus Pacotes
 
 O software estatístico livre, gratuito e *open source* `R` possui em 04/07/2016 
 mais de 8700 **pacotes** ou bibliotecas (*packages*) de funções e rotinas 
@@ -67,7 +67,7 @@ As funcionalidade que cada pacote implementa podem ser
 ## Pacotes Padrão e Adicionais
 
 Cerca de 50 pacotes básicos são instalados automaticamente durante a instalação 
-do R no computador.
+do `R` no computador.
 
 Os outros cerca de 8700 pacotes devem ser instalados individualmente conforme o 
 interesse ou necessidade do usuário por mais funcionalidades.
@@ -76,29 +76,29 @@ interesse ou necessidade do usuário por mais funcionalidades.
 
 ## Utilização dos Pacotes 
 
-Dos cerca de 50 pacotes instalados automaticamente com o R, apenas 6 são 
-carregados automaticamente quando o R é iniciado.
+Dos cerca de 50 pacotes instalados automaticamente com o `R`, apenas 6 são 
+carregados automaticamente quando o `R` é iniciado.
 
-Todos os outros pacotes instalados automática ou manualmente no R precisam ser 
+Todos os outros pacotes instalados automática ou manualmente no `R` precisam ser 
 carregados manualmente pelo usuário para que suas funcionalidades sejam 
-utilizadas durante a execução do programa R.
+utilizadas durante a execução do programa `R`.
 
 
 
 ## Utilizando Pacotes 
 
 Uma vez carregado um pacote, todas as suas funcionalidades continuam disponíveis 
-para o usuário até o fim da execução do R ou até você descarregar o pacote 
+para o usuário até o fim da execução do `R` ou até você descarregar o pacote 
 manualmente da memória.
 
-Assim, não é necessário carregar um pacote novamente na mesma execução do R para 
+Assim, não é necessário carregar um pacote novamente na mesma execução do `R` para 
 utilizar as suas funcionalidades se o pacote já tiver sido carregado uma vez.
 
 
 
 ## Vendo os Pacotes Já Instalados
 
-Execute o seguinte comando para ver o nome dos pacotes já estão instalados no R
+Execute o seguinte comando para ver o nome dos pacotes já estão instalados no `R`
 
 ```{r}
 rownames(installed.packages())
@@ -113,7 +113,7 @@ installed.packages()
 
 
 
-## Se Você Estiver Rodando o `RStudio`
+## Se Você Estiver `R`odando o `RStudio`
 
 Basta olhar a aba `Packages` para ver quais pacotes estão instalados.
 
@@ -121,15 +121,15 @@ Basta olhar a aba `Packages` para ver quais pacotes estão instalados.
 
 
 
-## Carregando e Descarregando Pacotes no R
+## Carregando e Descarregando Pacotes no `R`
 
-Execute o seguinte comando para carregar um pacote no R
+Execute o seguinte comando para carregar um pacote no `R`
 
 ```{r}
 library(nome)
 ```
 
-e execute o seguinte comando para descarregar um pacote no R
+e execute o seguinte comando para descarregar um pacote no `R`
 
 ```{r}
 detach("package:nome", unload = TRUE)
@@ -139,7 +139,7 @@ em que `nome` sem aspas é o nome do pacote já instalado.
 
 
 
-## Carregando e Descarregando Pacotes no R
+## Carregando e Descarregando Pacotes no `R`
 
 Por exemplo, execute o seguinte comando para carregar as funcionalidades de 
 modelagem de equações estruturais que foram implementadas no pacote `sem`
@@ -168,13 +168,13 @@ pacote na aba `Packages`.
 
 ## Instalando e Desinstalando Pacotes
 
-Execute o seguinte comando para instalar um pacote no R
+Execute o seguinte comando para instalar um pacote no `R`
 
 ```{r}
 install.packages("nome")
 ```
 
-e execute o seguinte comando para desinstalar um pacote no R
+e execute o seguinte comando para desinstalar um pacote no `R`
 
 ```{r}
 remove.packages("nome")
@@ -230,28 +230,28 @@ pacote para desinstalá-lo.
 
 
 
-# Atividades de Manuseio de Dados {#manuseio}
+# Atividades de Manuseio de Dados 
 
 
 
 ## Atividades de Manuseio de Dados
 
-1. [*Pipe*](#pipe)
-1. [Lendo/importando/escrevendo/exportando](#lendo-escrevendo)
-1. [Visualização dos dados e da sua estrutura](#visualizacao)
-1. [Manuseio das variáveis do conjunto de dados](#variaveis)
-1. [Manuseio das observações do conjunto de dados](#observacoes)
-1. [Convertendo entre os formatos longo e largo](#formatos)
-1. [Manuseio de arquivos](#arquivos)
-1. [*Manuseio das observações e das variáveis*](#data-table)
-1. [*Agregação os dados de um conjunto de dados*](#agregacao)
-1. [*Junção de conjuntos de dados*](#juncao)
+1. [*Pipe*](#22)
+1. [Lendo/importando/escrevendo/exportando](#48)
+1. [Visualização dos dados e da sua estrutura](#69)
+1. [Manuseio das variáveis do conjunto de dados](#76)
+1. [Manuseio das observações do conjunto de dados](#85)
+1. [Convertendo entre os formatos longo e largo](#92)
+1. [Manuseio de arquivos](#99)
+1. [*Manuseio das observações e das variáveis*](#107)
+1. [*Agregação os dados de um conjunto de dados*](#109)
+1. [*Junção de conjuntos de dados*](#111)
 
 
 
 
 
-# *Pipe* {#pipe}
+# *Pipe* 
 
 
 
@@ -553,7 +553,7 @@ hourly_delay <-
 
 
 
-## Pacote no R que implementam *piping*
+## Pacote no `R` que implementam *piping*
 
 1. Pacote `magrittr`: %>%, %T>%, %<>%
 2. Pacote `pipeR`: %>>%
@@ -660,11 +660,11 @@ entrará a saída da função anterior
 
 
 
-# Lendo, Importando, Escrevendo {#lendo-escrevendo}
+# Lendo/Importando/Escrevendo/Exportando
 
 
 
-## Lendo, Importando, Escrevendo
+## Lendo/Importando/Escrevendo/Exportando
 
 1. Lendo e Escrevendo
     1. Pacote `base`: `save()` e `load()`
@@ -934,13 +934,13 @@ Pacote `xlsx`: ***AQUI!!!***
 
 Peguem os seu arquivos de dados.
 
-Vamos importá-los no R e salvá-los como arquivo `.Rdata`.
+Vamos importá-los no `R` e salvá-los como arquivo `.Rdata`.
 
 
 
 
 
-# Visualização dos Dados e da sua Estrutura {#visualizacao}
+# Visualização dos Dados e da sua Estrutura 
 
 
 
@@ -988,7 +988,7 @@ Vamos importá-los no R e salvá-los como arquivo `.Rdata`.
 
 
 
-# Manuseio das variáveis do conjunto de dados {#variaveis}
+# Manuseio das variáveis do conjunto de dados 
 
 
 
@@ -1057,7 +1057,7 @@ Vamos importá-los no R e salvá-los como arquivo `.Rdata`.
 
 
 
-# Manuseio das observações do conjunto de dados {#observacoes}
+# Manuseio das observações do conjunto de dados 
 
 
 
@@ -1104,7 +1104,7 @@ Vamos importá-los no R e salvá-los como arquivo `.Rdata`.
 
 
 
-# Convertendo entre os formatos longo e largo {#formatos}
+# Convertendo entre os formatos longo e largo 
 
 
 
@@ -1156,7 +1156,7 @@ Vamos importá-los no R e salvá-los como arquivo `.Rdata`.
 
 
 
-## Manuseio de arquivos {#arquivos}
+## Manuseio de arquivos 
 
 1. Pacote `base`
     1. `get.wd()` e `set.wd()`
@@ -1210,7 +1210,7 @@ Vamos importá-los no R e salvá-los como arquivo `.Rdata`.
 
 
 
-## *Manuseio das observações e das variáveis* {#data-table}
+## *Manuseio das observações e das variáveis* 
 
 1. Pacote `data.table`
 
@@ -1221,7 +1221,7 @@ ele neste curso.
 
 
 
-# *Agregação os dados de um conjunto de dados* {#agregação}
+# *Agregação os dados de um conjunto de dados* 
 
 
 
@@ -1239,7 +1239,7 @@ ele neste curso.
 
 
 
-# *Junção de conjuntos de dados* {#juncao}
+# *Junção de conjuntos de dados* 
 
 
 
