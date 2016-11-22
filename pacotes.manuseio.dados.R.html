@@ -598,12 +598,7 @@ G = \exp\left(\frac1n\sum_{i=1}^n\log(x_i)\right)
 <li>Importando
 
 <ol>
-<li>Pacote <code>utils</code>
-
-<ol>
-<li><code>tar()</code>, <code>zip()</code>, <code>untar()</code> e <code>unzip()</code></li>
-<li><code>read.csv()</code>, <code>read.csv2()</code>, <code>read.delim()</code>, <code>read.delim2()</code>, <code>read.table()</code> e <code>read.fwf()</code></li>
-</ol></li>
+<li>Pacote <code>utils</code> <code>read.csv()</code>, <code>read.csv2()</code>, <code>read.delim()</code>, <code>read.delim2()</code>, <code>read.table()</code> e <code>read.fwf()</code></li>
 <li>Pacote <code>foreign</code>: <code>read.dta()</code> (Stata), <code>read.epiinfo()</code> (EpiInfo), <code>read.mpt()</code> (Minitab), <code>read.spss()</code> (SPSS)</li>
 <li>Pacote <code>readxl</code>: <code>excel_sheets()</code>, <code>read_excel()</code> (Excel)</li>
 </ol></li>
@@ -624,36 +619,10 @@ load(&quot;arquivo.Rdata&quot;)</pre>
 </article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils">
 
 <ol>
-<li><code>tar()</code>, <code>zip()</code>, <code>untar()</code> e <code>unzip()</code>: compactação e descompactação de arquivos</li>
 <li><code>read.csv()</code>, <code>read.csv2()</code>, <code>read.delim()</code>, <code>read.delim2()</code>, <code>read.table()</code> e <code>read.fwf</code>: importação de dados exportados como arquivos de texto</li>
 </ol>
 
 </article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-1">
-
-<ul>
-<li><code>tar()</code>, <code>zip()</code>, <code>untar()</code> e <code>unzip()</code>: compactação e descompactação de arquivos
-
-<ul>
-<li><code>tar()</code> e <code>zip()</code>: compactam arquivos</li>
-<li><code>untar()</code> e <code>unzip()</code>: extraem ou listam arquivos contidos em um arquivo compactado</li>
-<li><code>tar()</code> e <code>untar()</code>: lidar com formato <code>.tar</code></li>
-<li><code>zip()</code> e <code>unzip()</code>: lidam com formato <code>.zip</code></li>
-</ul></li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-2">
-
-<pre class = 'prettyprint lang-r'># para compactar
-tar(tarfile = &quot;nome.tar&quot;, files = c(&quot;nome_1.ext&quot;, &quot;nome_2.ext&quot;, ..., &quot;nome_n.ext&quot;))
-zip(zipfile = &quot;nome.zip&quot;, files = c(&quot;nome_1.ext&quot;, &quot;nome_2.ext&quot;, ..., &quot;nome_n.ext&quot;))
-# para listar o conteúdo de um arquivo compactado
-untar(tarfile = &quot;nome.tar&quot;, list = T)
-unzip(zipfile = &quot;nome.zip&quot;, list = T)
-# para extrair arquivos de dentro de um arquivo compactado
-untar(tarfile = &quot;nome.tar&quot;, files = c(&quot;nome_1.ext&quot;, &quot;nome_2.ext&quot;, ..., &quot;nome_n.ext&quot;))
-unzip(zipfile = &quot;nome.zip&quot;, files = c(&quot;nome_1.ext&quot;, &quot;nome_2.ext&quot;, ..., &quot;nome_n.ext&quot;))</pre>
-
-</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-3">
 
 <p>Importação de dados exportados como arquivos de texto</p>
 
@@ -664,7 +633,7 @@ unzip(zipfile = &quot;nome.zip&quot;, files = c(&quot;nome_1.ext&quot;, &quot;no
 <li><code>read.fwf()</code>: dados com as colunas com tamanhos fixos</li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-4">
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-2">
 
 <ul>
 <li><code>read.csv()</code>, <code>read.csv2()</code>, <code>read.delim()</code> e <code>read.delim2()</code>
@@ -683,7 +652,7 @@ unzip(zipfile = &quot;nome.zip&quot;, files = c(&quot;nome_1.ext&quot;, &quot;no
 </ul></li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-5">
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-3">
 
 <ul>
 <li><code>read.csv()</code>, <code>read.csv2()</code>, <code>read.delim()</code> e <code>read.delim2()</code></li>
@@ -697,7 +666,7 @@ unzip(zipfile = &quot;nome.zip&quot;, files = c(&quot;nome_1.ext&quot;, &quot;no
     Bia,25,8.3      Bia;25;8,3      Bia     25  8.3     Bia     25  8,3 
     Caio,23,5.2     Caio;23;5,2     Caio    23  5.2     Caio    23  5,2 </pre>
 
-</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-6">
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-4">
 
 <ul>
 <li><code>read.csv()</code>, <code>read.csv2()</code>, <code>read.delim()</code> e <code>read.delim2()</code></li>
@@ -714,7 +683,7 @@ unzip(zipfile = &quot;nome.zip&quot;, files = c(&quot;nome_1.ext&quot;, &quot;no
     Bia;25;8,3          &quot;Bia&quot;;25;8,3
     Caio;23;5,2         &quot;Caio&quot;;23;5,2</pre>
 
-</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-7">
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-5">
 
 <ul>
 <li><code>read.csv()</code>, <code>read.csv2()</code>, <code>read.delim()</code> e <code>read.delim2()</code></li>
@@ -727,7 +696,7 @@ read.delim2(&quot;nome.txt&quot;)</pre>
 
 <p>em que <code>nome</code> é o nome do seu arquivo.</p>
 
-</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-8">
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-6">
 
 <ul>
 <li><code>read.table()</code>: dados com as colunas delimitadas de outras formas</li>
@@ -740,7 +709,7 @@ Bia 25 8.3                  Bia 25 8.3
 Caio 23 5.2                 Caio23 5.2 </pre></li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-9">
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-7">
 
 <p><code>read.table()</code> é o canivete suíço para leitura de dados delimitados</p>
 
@@ -757,7 +726,7 @@ Caio 23 5.2                 Caio23 5.2 </pre></li>
     fileEncoding = &quot;&quot;, encoding = &quot;unknown&quot;, skipNul = FALSE
 )</pre>
 
-</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-10">
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-8">
 
 <p>Alguns parâmetros opcionais mais usados de <code>read.table()</code>:</p>
 
@@ -771,7 +740,7 @@ Caio 23 5.2                 Caio23 5.2 </pre></li>
 <li><code>skip</code> indica quantas linhas devem ser ignoradas antes de começar a ler</li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-11">
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-9">
 
 <p>Alguns parâmetros opcionais mais usados de <code>read.table()</code>:</p>
 
@@ -788,7 +757,7 @@ Caio 23 5.2                 Caio23 5.2 </pre></li>
 </ul></li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-12">
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-10">
 
 <ul>
 <li><code>read.fwf()</code> é a função para leitura de dados de tamanho fixo</li>
@@ -809,7 +778,7 @@ Caio 23 5.2                 Caio23 5.2 </pre></li>
 ## 2 Bia  25  8.3
 ## 3 Caio 23  5.2</pre>
 
-</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-13">
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-11">
 
 <ul>
 <li><code>read.fwf()</code></li>
@@ -975,19 +944,19 @@ read_excel(&quot;dividas.xlsx&quot;, sheet = 2, col_types = NULL, skip = 2)</pre
 <li><code>unique()</code></li>
 </ol>
 
-</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-14">
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-12">
 
 <ol>
 <li><code>str()</code></li>
 </ol>
 
-</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-15">
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-13">
 
 <ol>
 <li><code>fix()</code></li>
 </ol>
 
-</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-16">
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-14">
 
 <ol>
 <li><code>head()</code> e <code>tail()</code></li>
@@ -1182,6 +1151,11 @@ read_excel(&quot;dividas.xlsx&quot;, sheet = 2, col_types = NULL, skip = 2)</pre
 <li><code>file.copy()</code> e <code>file.rename()</code></li>
 <li><code>file.remove()</code> e <code>unlink()</code></li>
 </ol></li>
+<li>Pacote <code>utils</code>
+
+<ol>
+<li><code>tar()</code>, <code>zip()</code>, <code>untar()</code> e <code>unzip()</code></li>
+</ol></li>
 </ol>
 
 </article></slide><slide class=''><hgroup><h2>Pacote <code>base</code></h2></hgroup><article  id="pacote-base-7">
@@ -1219,6 +1193,37 @@ read_excel(&quot;dividas.xlsx&quot;, sheet = 2, col_types = NULL, skip = 2)</pre
 <ol>
 <li><code>file.remove()</code> e <code>unlink()</code></li>
 </ol>
+
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-15">
+
+<ol>
+<li><code>tar()</code>, <code>zip()</code>, <code>untar()</code> e <code>unzip()</code>: compactação e descompactação de arquivos</li>
+</ol>
+
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-16">
+
+<ul>
+<li><code>tar()</code>, <code>zip()</code>, <code>untar()</code> e <code>unzip()</code>: compactação e descompactação de arquivos
+
+<ul>
+<li><code>tar()</code> e <code>zip()</code>: compactam arquivos</li>
+<li><code>untar()</code> e <code>unzip()</code>: extraem ou listam arquivos contidos em um arquivo compactado</li>
+<li><code>tar()</code> e <code>untar()</code>: lidar com formato <code>.tar</code></li>
+<li><code>zip()</code> e <code>unzip()</code>: lidam com formato <code>.zip</code></li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Pacote <code>utils</code></h2></hgroup><article  id="pacote-utils-17">
+
+<pre class = 'prettyprint lang-r'># para compactar
+tar(tarfile = &quot;nome.tar&quot;, files = c(&quot;nome_1.ext&quot;, &quot;nome_2.ext&quot;, ..., &quot;nome_n.ext&quot;))
+zip(zipfile = &quot;nome.zip&quot;, files = c(&quot;nome_1.ext&quot;, &quot;nome_2.ext&quot;, ..., &quot;nome_n.ext&quot;))
+# para listar o conteúdo de um arquivo compactado
+untar(tarfile = &quot;nome.tar&quot;, list = T)
+unzip(zipfile = &quot;nome.zip&quot;, list = T)
+# para extrair arquivos de dentro de um arquivo compactado
+untar(tarfile = &quot;nome.tar&quot;, files = c(&quot;nome_1.ext&quot;, &quot;nome_2.ext&quot;, ..., &quot;nome_n.ext&quot;))
+unzip(zipfile = &quot;nome.zip&quot;, files = c(&quot;nome_1.ext&quot;, &quot;nome_2.ext&quot;, ..., &quot;nome_n.ext&quot;))</pre>
 
 </article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2><em>Manuseio das observações e das variáveis</em></h2></hgroup><article  id="manuseio-das-observacoes-e-das-variaveis">
 
